@@ -13,6 +13,9 @@ sh -c "/Isabelle2020/bin/isabelle $*"
 # begin substitued by the outer shell (that does not have the environment variables).
 /Isabelle2020/bin/isabelle env bash << 'EOC'
 if [ -d $ISABELLE_HEAPS ]; then
-   cp -r "$ISABELLE_HEAPS" "$GITHUB_WORKSPACE/heaps"
+  pwd
+  ls -al .
+  ls -al $ISABELLE_HEAPS
+  cp -r $ISABELLE_HEAPS heaps
 fi
 EOC
