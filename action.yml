@@ -4,8 +4,13 @@ inputs:
   args:
     description: 'Isabelle arguments'
     required: true
+  heapCacheDir:
+    description: 'path to save to/load from Isabelle session heap'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    HEAP_CACHE_DIR: ${{ inputs.heapCacheDir }}
   args:
     - ${{ inputs.args }}
