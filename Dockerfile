@@ -8,10 +8,10 @@ RUN apt-get -y update && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/
 
-RUN curl https://isabelle.in.tum.de/dist/Isabelle2023_linux.tar.gz > Isabelle2023_linux.tar.gz && \
-  tar xzf Isabelle2023_linux.tar.gz && \
-  Isabelle2023/bin/isabelle build -v -o system_heaps -b HOL && \
-  rm Isabelle2023_linux.tar.gz
+RUN curl https://isabelle.in.tum.de/dist/Isabelle2024_linux.tar.gz > Isabelle2024_linux.tar.gz && \
+  tar xzf Isabelle2024_linux.tar.gz && \
+  Isabelle2024/bin/isabelle build -v -o system_heaps -b HOL && \
+  rm Isabelle2024_linux.tar.gz
 
 COPY entrypoint.sh /entrypoint.sh
 
